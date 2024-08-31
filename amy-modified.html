@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Sequence</title>
+    <style>
+        img {
+            display: block;
+            margin: 0 auto;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+   
+    <div id="photo-container">
+        <img id="photo" src="C:\\Users\\Lenovo\\Desktop\\LAB1REGOROSO\\amy-modified.png" alt="Photo">
+    </div>
+
+    
+    <script>
+        
+        const photos = [
+            "C:\\Users\\Lenovo\\Desktop\\LAB1REGOROSO\\amy-modified.png",
+            "C:\\Users\\Lenovo\\Desktop\\LAB1REGOROSO\\beth-modified.png",
+            "C:\\Users\\Lenovo\\Desktop\\LAB1REGOROSO\\jo-modified.png",
+            "C:\\Users\\Lenovo\\Desktop\\LAB1REGOROSO\\meg-modified.png"
+        ];
+
+        
+        let currentPhotoIndex = 0;
+
+       
+        const photoElement = document.getElementById('photo');
+
+      
+        function showNextPhoto() {
+            currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+            photoElement.src = photos[currentPhotoIndex];
+        }
+
+       
+        photoElement.addEventListener('click', showNextPhoto);
+    </script>
+
+</body>
+</html>
